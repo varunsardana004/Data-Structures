@@ -2,6 +2,7 @@ import java.util.*;
 public class Main
 {
     Node head=null;
+    Node tail=null;
     static class Node{
         int data;
         Node next;
@@ -30,6 +31,7 @@ public class Main
             temp.next=newnode;
             newnode.prev=temp;
             temp=newnode;
+	    tail=temp;
         }
     }
     public void display(){
