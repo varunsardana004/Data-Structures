@@ -77,7 +77,7 @@ public class Main
 	  ob.display();
 	  
 	  ob.deletefromend();    // Delete node from end.
-	  System.out.println("\nCircular Linked List after deleting node from beginning : ");
+	  System.out.println("\nCircular Linked List after deleting node from end : ");
 	  ob.display();
 	    
 	}
