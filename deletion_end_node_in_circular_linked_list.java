@@ -28,7 +28,7 @@ public class Main
     }
     public void deletefromend(){
         Node current=tail.next;
-        Node previous;
+        Node previous=null;
         if(tail==null)
         {
             return;
@@ -82,5 +82,4 @@ public class Main
 	    
 	}
 }
-
 
