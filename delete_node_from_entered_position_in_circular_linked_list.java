@@ -27,12 +27,23 @@ public class Main
             tail=newnode;
         }
     }
+    public void deletefrombeginning(){
+        if(tail==null)
+        {
+            return;
+        }
+        else
+        {
+            tail.next=tail.next.next;
+        }
+    }
     public void deletefromPosition(int pos){
         Node current=tail.next;
         int i=1;
       
-        if(pos>n||pos<0){
+        if(pos>n||pos<=0){
             System.out.println("Invalid Position.");
+            
         }
         else{
         if(tail==null)
@@ -41,6 +52,10 @@ public class Main
         }
         else if(current.next==current){
             tail=null;
+        }
+        else if(pos==1)
+        {
+            deletefrombeginning();
         }
         else
         {
@@ -87,6 +102,3 @@ public class Main
 	    
 	}
 }
-
-
-
