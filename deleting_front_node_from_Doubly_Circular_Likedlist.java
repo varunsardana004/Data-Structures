@@ -34,9 +34,16 @@ public class Main
     }
     public void deletefrombeginning()
     {
+	    if(head==tail){
+		head=tail=null;    
+		    
+	    }
+	    else
+	    {
         Node temp=head;
         head=temp.next;
         head.prev=tail;
+	    }
     }
     public void display(){
         if(head==null)
