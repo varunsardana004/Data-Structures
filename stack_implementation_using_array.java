@@ -26,6 +26,7 @@ public class Main
             top--;
             System.out.println("Popped element is "+item);
         }
+        
     }
     static void peek()
     {
@@ -38,11 +39,19 @@ public class Main
             System.out.println("Top most element is "+stack[top]);
         }
     }
+    static void display(){
+        System.out.println("Stack elements are : ");
+        for(int i=top;i>=0;i--)
+        {
+            System.out.print(stack[i]+" ");
+        }
+        System.out.println();
+    }
 	public static void main(String[] args) {
-	    
-	    System.out.println("Enter 1 for push operation\nEnter 2 for pop operation\nEnter 3 for peek operation(i.e to see top most element)\nEnter 4 to display stack");
+	   
 	    char c;
 	    do{
+	         System.out.println("Enter 1 for push operation\nEnter 2 for pop operation\nEnter 3 for peek operation(i.e to see top most element)\nEnter 4 to display stack");
 	    int choice=s.nextInt();
 	    switch(choice){
 	        case 1:
@@ -54,11 +63,15 @@ public class Main
 	        case 3:
 	            peek();
 	            break;
+	        case 4:
+	            display();
+	            break;
 	      
 	    }
 	    System.out.println("press y to continue and n to exit");
 	     c = s.next().charAt(0); 
 	    }while(c!='n');
+	    
 	    
 	}
 }
