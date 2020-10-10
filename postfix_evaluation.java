@@ -5,12 +5,11 @@ class Main
     int i, op1, op2, answer;
     for (i = 0; i < exp.length(); ++i)
     {
-      // If the scanned character is an operand (number here), push it to the stack.
+    
       char c = exp.charAt(i);
       if (Character.isDigit(c))
         s.push(c - '0');
 
-      // If the scanned character is an operator, pop two elements from stack apply the operator
       else
       {
         op2 = s.pop();
