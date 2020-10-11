@@ -66,7 +66,7 @@ public class Main
 	    System.out.println("*****Queue Implementation Using Array*****");
 	    char c;
 	    do{
-	         System.out.println("Enter 1 for enqueue operation\nEnter 2 for dequeue operation\nEnter 3 for peek operation(i.e to see top most element)\nEnter 4 to display stack");
+	         System.out.println("Enter 1 for enqueue operation\nEnter 2 for dequeue operation\nEnter 3 for peek operation(i.e to see top most element)\nEnter 4 to display queue");
 	    int choice=s.nextInt();
 	    switch(choice){
 	        case 1:
