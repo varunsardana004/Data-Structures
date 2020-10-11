@@ -1,69 +1,96 @@
 import java.util.*;
 public class Main
-{  public int top=-1;
-public static int n=4;
-public int item,front = -1, rear = -1; 
-public int queue[]=new int[n];
-    void insert(int item)  
-{  
-    if((rear+1)%n == front)  
-    {  
-        System.out.println("Overflow"); 
-        return;  
-    }  
-    else if(front == -1 && rear == -1)  
-    {  
-        front = 0;  
-        rear = 0;  
-    }  
-    else if(rear == n -1 && front != 0)   
-    {  
-        rear = 0;  
-    }  
-    else   
-    {  
-        rear = (rear+1)%n;  
-    }  
-    queue[rear] = item; 
-     System.out.println("inserted element is "+queue[rear]);
-}  
-void delete()  
-{   
-    if(front == -1 & rear == -1)  
-    {  
-        System.out.println("UNDERFLOW");
-        return;  
-    }  
-    else if(front == rear)  
-    {  
-        front = -1;  
-        rear = -1;  
-    }  
-    else if(front == n-1)  
-        {  
-            front = 0;  
-        }  
-    else   
-        item=front;
-        front = front + 1; 
+{   static Scanner s=new Scanner(System.in);
+    static int n=5; //assuming queue size is 5.
+    static int front=-1;
+    static int rear=-1;
+    static int queue[]=new int[n];
+    
+    static void enqueue(){
+        System.out.println("Enter data");
+        int data=s.nextInt();
+        if((rear+1)%n==front){
+            System.out.println("queue is full");
+        }
+        else if(front==-1&&rear==-1){
+            front=rear=0;
+            queue[rear]=data;
+        }
+        else{
+            rear=(rear+1)%n;
+            queue[rear]=data;
+        }
+    }
+    
+    static void dequeue(){
+        int item;
+        if(front==-1&&rear==-1)
+        {
+            System.out.println("Queue Empty");
+        }
+        else if(front==rear)
+        {
+            System.out.println("Dequeued element is "+queue[front]+"\nQueue is now Empty");
+            front=rear=-1;
+        }
+        else{
+            item=queue[front];
+            front=(front+1)%n;
+            System.out.println("Dequeued element is "+item);
+        }
         
-    System.out.println("deleted element is "+queue[item]);
-}  
+    }
+    static void peek()
+    {
+        if(front==-1&&rear==-1)
+        {
+            System.out.println("Queue Empty");
+        }
+        else
+        {
+            System.out.println("Top most element is "+queue[front]);
+        }
+    }
+    static void display(){
+       int i=front;
+        if(front==-1&&rear==-1){
+            System.out.println("Queue Empty");
+        }
+        else{
+        System.out.println("Queue elements are : ");
+       while(i!=rear)
+        {
+            System.out.print(queue[i]+" ");
+            i=(i+1)%n;
+        }
+        System.out.print(queue[rear]+"\n");
+        }
+    }
 	public static void main(String[] args) {
-     
-        
-        int data;
-        Scanner s=new Scanner(System.in);
-       
-        Main ob=new Main();
-      ob.insert(10);
-      ob.insert(20);
-      ob.delete();
-      ob.insert(30);
-      ob.insert(40);
-      ob.delete();
-        
+	    System.out.println("*****Circular Queue Implementation Using Array*****");
+	    char c;
+	    do{
+	         System.out.println("Enter 1 for enqueue operation\nEnter 2 for dequeue operation\nEnter 3 for peek operation(i.e to see top most element)\nEnter 4 to display queue");
+	    int choice=s.nextInt();
+	    switch(choice){
+	        case 1:
+	           enqueue();
+	            break;
+	        case 2:
+	            dequeue();
+	            break;
+	        case 3:
+	            peek();
+	            break;
+	        case 4:
+	            display();
+	            break;
+	      
+	    }
+	    System.out.println("press y to continue and n to exit");
+	     c = s.next().charAt(0); 
+	    }while(c!='n');
+	    
+	    
 	}
 }
-
-
