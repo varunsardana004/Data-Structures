@@ -213,3 +213,80 @@ public class Main
 
   }
 }
+
+
+
+//Output of the above Program
+/*     Tree:                                                                                                                                         
+       20                                                                                                                                        
+      /  \                                                                                                                                       
+    16    60                                                                                                                                     
+   / \      \                                                                                                                                    
+  5   18    85                                                                                                                                   
+     /  \   /                                                                                                                                    
+    17  19 70                                                                                                                                    
+                                                                                                                                                 
+Inorder Traversal :                                                                                                                              
+5 16 17 18 19 20 60 70 85                                                                                                                        
+Preorder traversal :                                                                                                                             
+20 16 5 18 17 19 60 85 70                                                                                                                        
+Postorder traversal :                                                                                                                            
+16 5 18 17 19 60 85 70 20                                                                                                                        
+***********************************************                                                                                                  
+                                                                                                                                                 
+Delete 17                                                                                                                                        
+                                                                                                                                                 
+Inorder traversal after deleting 17                                                                                                              
+5 16 18 19 20 60 70 85                                                                                                                           
+Preorder traversal after deleting 17                                                                                                             
+20 16 5 18 19 60 85 70                                                                                                                           
+Postorder traversal after deleting 17                                                                                                            
+16 5 18 19 60 85 70 20  
+Tree after deleting 17:                                                                                                  
+       20                                                                                                                                        
+      /  \                                                                                                                                       
+    16    60                                                                                                                                     
+   / \      \                                                                                                                                    
+  5   18    85                                                                                                                                   
+        \   /                                                                                                                                    
+         19 70                                                                                                                                   
+***********************************************                                                                                                  
+                                                                                                                                                 
+Delete 60                                                                                                                                        
+                                                                                                                                                 
+Inorder traversal after deleting 60                                                                                                              
+5 16 18 19 20 70 85                                                                                                                              
+Preorder traversal after deleting 60                                                                                                             
+20 16 5 18 19 85 70                                                                                                                              
+Postorder traversal after deleting 60                                                                                                            
+16 5 18 19 85 70 20  
+Tree after deleting 60:                                                                                                     
+       20                                                                                                                                        
+      /  \                                                                                                                                       
+    16    85                                                                                                                                     
+   / \    /                                                                                                                                      
+  5   18  70                                                                                                                                     
+        \                                                                                                                                        
+         19                                                                                                                                      
+***********************************************                                                                                                  
+                                                                                                                                                 
+Delete 20                                                                                                                                        
+                                                                                                                                                 
+Inorder traversal after deleting 20                                                                                                              
+5 16 18 19 70 85                                                                                                                                 
+Preorder traversal after deleting 20                                                                                                             
+70 16 5 18 19 85                                                                                                                                 
+Postorder traversal after deleting 20                                                                                                            
+16 5 18 19 85 70 
+Tree after deleting 20:                                                                                                        
+       70                                                                                                                                        
+      /  \                                                                                                                                       
+    16    85                                                                                                                                     
+   / \                                                                                                                                           
+  5   18                                                                                                                                         
+        \                                                                                                                                        
+         19   
+	 
+	 */
+
+                  
