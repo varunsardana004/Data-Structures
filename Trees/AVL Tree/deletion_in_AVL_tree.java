@@ -14,7 +14,7 @@ class AVLTree
 {  
     Node root;  
   
-    // A utility function to get height of the tree  
+    //function to get height of the tree  
     int height(Node N)  
     {  
         if (N == null)  
@@ -22,14 +22,13 @@ class AVLTree
         return N.height;  
     }  
   
-    // A utility function to get maximum of two integers  
+    //function to get maximum of two integers  
     int max(int a, int b)  
     {  
         return (a > b) ? a : b;  
     }  
   
     // A utility function to right rotate subtree rooted with y  
-    // See the diagram given above.  
     Node rightRotate(Node y)  
     {  
         Node x = y.left;  
@@ -47,8 +46,7 @@ class AVLTree
         return x;  
     }  
   
-    // A utility function to left rotate subtree rooted with x  
-    // See the diagram given above.  
+    // function to left rotate subtree rooted with x  
     Node leftRotate(Node x)  
     {  
         Node y = x.right;  
@@ -144,18 +142,15 @@ class AVLTree
         if (root == null)  
             return root;  
   
-        // If the key to be deleted is smaller than  
-        // the root's key, then it lies in left subtree  
+        // If the key to be deleted is smaller than the root's key, then it lies in left subtree  
         if (key < root.key)  
             root.left = deleteNode(root.left, key);  
   
-        // If the key to be deleted is greater than the  
-        // root's key, then it lies in right subtree  
+        // If the key to be deleted is greater than the root's key, then it lies in right subtree  
         else if (key > root.key)  
             root.right = deleteNode(root.right, key);  
   
-        // if key is same as root's key, then this is the node  
-        // to be deleted  
+        // if key is same as root's key, then this is the node to be deleted  
         else
         {  
   
@@ -175,14 +170,12 @@ class AVLTree
                     root = null;  
                 }  
                 else // One child case  
-                    root = temp; // Copy the contents of  
-                                // the non-empty child  
+                    root = temp; // Copy the contents of the non-empty child  
             }  
             else
             {  
   
-                // node with two children: Get the inorder  
-                // successor (smallest in the right subtree)  
+                // node with two children: Get the inorder successor (smallest in the right subtree)  
                 Node temp = minValueNode(root.right);  
   
                 // Copy the inorder successor's data to this node  
@@ -200,12 +193,10 @@ class AVLTree
         // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE  
         root.height = max(height(root.left), height(root.right)) + 1;  
   
-        // STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whether  
-        // this node became unbalanced)  
+        // STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whether  this node became unbalanced)  
         int balance = getBalance(root);  
   
-        // If this node becomes unbalanced, then there are 4 cases  
-        // Left Left Case  
+        // If this node becomes unbalanced, then there are 4 cases Left Left Case  
         if (balance > 1 && getBalance(root.left) >= 0)  
             return rightRotate(root);  
   
@@ -230,9 +221,7 @@ class AVLTree
         return root;  
     }  
   
-    // A utility function to print preorder traversal of  
-    // the tree. The function also prints height of every  
-    // node  
+    // A utility function to print preorder traversal of  the tree. The function also prints height of every node  
     void preOrder(Node node)  
     {  
         if (node != null)  
@@ -277,10 +266,10 @@ class AVLTree
         1  
         / \  
         0 9  
-        /     / \  
-        -1 5 11  
-        / \  
-        2 6  
+        / /\  
+       -1 5 11  
+       / \  
+       2 6  
         */
         System.out.println("");  
         System.out.println("Preorder traversal after "+  
